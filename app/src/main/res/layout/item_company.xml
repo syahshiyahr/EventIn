@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    app:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="10dp"
+    >
+
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="118dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat"
+            android:textSize="14sp"
+            tools:text="Company Name" />
+
+        <ImageView
+            android:id="@+id/img_item_photo"
+            android:layout_width="93dp"
+            android:layout_height="93dp"
+            android:layout_marginStart="60dp"
+            android:layout_toEndOf="@id/tv_item_name"
+            tools:src="@color/colorAccent" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

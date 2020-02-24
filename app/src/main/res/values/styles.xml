@@ -1,0 +1,86 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#74A3D4</item>
+        <item name="colorPrimaryDark">#506898</item>
+        <item name="colorAccent">#74A3D4</item>
+    </style>
+
+    <style name="welcome_">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="please_sign">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="e_mail">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="password">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="forget_pass">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FEFFA8</item>
+    </style>
+
+    <style name="don_t_have_">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="create_an_a">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="form">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="create_your">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#3C3C3C</item>
+    </style>
+
+    <style name="text_create_event">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#3C3C3C</item>
+    </style>
+
+    <style name="hallo_user">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="your_event_">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="appSearchView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="sponsors_in">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#3C3C3C</item>
+    </style>
+
+    <style name="tracking">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#3C3C3C</item>
+    </style>
+
+</resources>

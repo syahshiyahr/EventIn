@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RegisterActivity"
+    android:background="@drawable/create_event">
+
+    <TextView
+        android:id="@+id/create_your"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="115dp"
+        android:text="@string/create_your"
+        android:textAppearance="@style/create_your"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/montserrat_bold"
+        />
+
+    <TextView
+        android:id="@+id/event_name_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="221dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="top"
+        android:text="Event Name"
+        android:textAppearance="@style/text_create_event" />
+
+    <EditText
+        android:id="@+id/edt_event_name"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/event_name_create"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="58dp"
+        android:inputType="textCapWords"
+        android:backgroundTint="#3C3C3C"/>
+
+    <TextView
+        android:id="@+id/event_date_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="322dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="top"
+        android:text="Event Date"
+        android:textAppearance="@style/text_create_event" />
+
+    <EditText
+        android:id="@+id/edt_date"
+        android:layout_width="292dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/event_date_create"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="58dp"
+        android:backgroundTint="#3C3C3C"
+        android:clickable="true"
+        android:editable="false"/>
+
+    <TextView
+        android:id="@+id/verify_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="419dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="top"
+        android:text="Verify Data"
+        android:textAppearance="@style/text_create_event" />
+
+    <TextView
+        android:id="@+id/describe_verify_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="444dp"
+        android:layout_marginRight="58dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="top"
+        android:text="Please upload 5 event committee selfie picture holding their ID and Student Card next to their face.(Combine all pictures into 1 file .pdf format)"
+        android:textColor="#3C3C3C"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/upload_file_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="507dp"
+        android:layout_marginRight="58dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="top"
+        android:text="Upload File"
+        android:textColor="#6689BF"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btn_create"
+        android:layout_width="220.79dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="575dp"
+        android:background="@drawable/button_blue"
+        android:elevation="4dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp" />
+
+
+</RelativeLayout>
