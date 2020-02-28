@@ -167,6 +167,21 @@
         android:textColor="#D3E5FF"
         android:textSize="12sp" />
 
+    <TextView
+        android:id="@+id/file_choosen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/upload_file_reg"
+        android:layout_marginRight="58dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="top"
+        android:text="No File Choosen"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp" />
+
     <Button
         android:id="@+id/btn_register"
         android:layout_width="220.79dp"

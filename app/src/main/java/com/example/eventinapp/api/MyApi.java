@@ -1,8 +1,10 @@
 package com.example.eventinapp.api;
 
 
+import com.example.eventinapp.model.Login;
 import com.example.eventinapp.model.User;
 import com.example.eventinapp.responses.BaseResponse;
+import com.example.eventinapp.responses.LoginResponse;
 
 import java.util.Map;
 
@@ -22,17 +24,23 @@ import retrofit2.http.Path;
 public interface MyApi {
     //USER
     //register
+    @Multipart
     @POST("User/register")
     Call<BaseResponse> register(
-            @Body
-                    User user
+            @Part("name") String name,
+            @Part("email") String email,
+            @Part("password") String password,
+            @Part("phoneNum") String phoneNum,
+            @Part MultipartBody.Part file
     );
 
-    @Multipart
-    @POST("images/upload_image.php")
-    Call<BaseResponse> upload(
-            @Header("Authorization") String authorization,
-            @PartMap Map<String, RequestBody> map
+    //Login
+    @POST("user/login")
+    Call<LoginResponse> login(
+            @Body
+                    Login login
     );
+
+
 
 }

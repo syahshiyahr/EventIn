@@ -3,14 +3,13 @@ package com.example.eventinapp.model;
 import com.github.barteksc.pdfviewer.PDFView;
 
 public class User {
-    private String name, email, password, phoneNum, identity;
+    private String name, email, password, phoneNum;
 
-    public User(String name, String email, String password, String phoneNum, String identity) {
+    public User(String name, String email, String password, String phoneNum) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.phoneNum = phoneNum;
-        this.identity = identity;
     }
 
     public String getPhoneNum() {
@@ -21,13 +20,6 @@ public class User {
         this.phoneNum = phoneNum;
     }
 
-    public String getIdentity() {
-        return identity;
-    }
-
-    public void setIdentity(String identity) {
-        this.identity = identity;
-    }
 
     public String getName() {
         return name;

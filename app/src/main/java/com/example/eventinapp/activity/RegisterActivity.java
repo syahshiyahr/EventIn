@@ -1,6 +1,7 @@
 package com.example.eventinapp.activity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -32,7 +33,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,8 +43,9 @@ import retrofit2.Response;
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText edtName, edtEmail, edtPassword, edtPhoneNum, edtIdentity;
     private Button register;
-    private TextView toSignin, upload;
-    private String name, email, password, phoneNum, identity;
+    private TextView toSignin, upload, fileChoosen;
+    private String nameUser, emailUser, passwordUser, phoneNumUser, identityUser;
+    public MultipartBody.Part part;
     private MyApi myApi;
     public static final int FILE_PICKER_REQUEST_CODE = 1;
     public ProgressDialog pDialog;
@@ -58,6 +62,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         edtName = findViewById(R.id.edt_nama_lengkap);
         edtEmail = findViewById(R.id.edt_email_reg);
         edtPassword = findViewById(R.id.edt_pass_reg);
+        edtPhoneNum = findViewById(R.id.edt_notelp_reg);
         upload = findViewById(R.id.upload_file_reg);
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -93,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(toSign);
                 break;
             case R.id.btn_register:
-                uploadFile();
+                registerUser();
                 break;
             case R.id.upload_file_reg:
                 launchPicker();
@@ -102,47 +107,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 }
 
-    private void uploadFile() {
-        if (pdfPath == null) {
-            Toast.makeText(this, "please select a file ", Toast.LENGTH_LONG).show();
-            return;
-        } else {
-            showpDialog();
 
-            // Map is used to multipart the file using okhttp3.RequestBody
-            Map<String, RequestBody> map = new HashMap<>();
-            File file = new File(pdfPath);
-            // Parsing any Media type file
-            RequestBody requestBody = RequestBody.create(MediaType.parse("application/pdf"), file);
-            map.put("file\"; filename=\"" + file.getName() + "\"", requestBody);
-            MyApi getResponse = ApiClient.getClient().create(MyApi.class);
-            Call<BaseResponse> call = getResponse.upload("token", map);
-            call.enqueue(new Callback<BaseResponse>() {
-                @Override
-                public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
-                    if (response.isSuccessful()){
-                        if (response.body() != null){
-                            hidepDialog();
-                            BaseResponse serverResponse = response.body();
-                            Toast.makeText(getApplicationContext(), serverResponse.getMessage(), Toast.LENGTH_SHORT).show();
-
-                        }
-                    }else {
-                        hidepDialog();
-                        Toast.makeText(getApplicationContext(), "problem file", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<BaseResponse> call, Throwable t) {
-                    hidepDialog();
-                    Log.v("Response gotten is", t.getMessage());
-                    Toast.makeText(getApplicationContext(), "problem uploading file " + t.getMessage(), Toast.LENGTH_SHORT).show();
-
-                }
-            });
-        }
-    }
     protected void hidepDialog() {
 
         if (pDialog.isShowing()) pDialog.dismiss();
@@ -186,10 +151,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
+    @SuppressLint("WrongViewCast")
     private void displayFromFile(File file) {
 
         Uri uri = Uri.fromFile(new File(file.getAbsolutePath()));
         pdfFileName = getFileName(uri);
+        fileChoosen = findViewById(R.id.file_choosen);
+        fileChoosen.setText(pdfFileName);
+
 
 
     }
@@ -215,4 +184,68 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-}
+    private void registerUser() {
+        if (pdfPath == null) {
+            Toast.makeText(this, "please select a file ", Toast.LENGTH_LONG).show();
+            return;
+        } else {
+            showpDialog();
+
+            // Map is used to multipart the file using okhttp3.RequestBody
+            Map<String, RequestBody> map = new HashMap<>();
+            File file = new File(pdfPath);
+            // Parsing any Media type file
+            RequestBody requestBody = RequestBody.create(MediaType.parse("application/pdf"), file);
+
+            part = MultipartBody.Part.createFormData("file",file.getName(), requestBody);
+
+
+        // ngambil text dari edit text
+        nameUser = edtName.getText().toString();
+        emailUser = edtEmail.getText().toString();
+        passwordUser = edtPassword.getText().toString();
+        phoneNumUser = edtPhoneNum.getText().toString();
+
+
+
+        myApi = ApiClient.getClient().create(MyApi.class);
+
+        Call<BaseResponse> registerCall = myApi.register(nameUser, emailUser, passwordUser, phoneNumUser, part);
+
+        registerCall.enqueue(new Callback<BaseResponse>() {
+            @Override
+               public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
+                   if (response.isSuccessful()){
+                        if (response.body() != null){
+                            hidepDialog();
+                            BaseResponse baseResponse = response.body();
+                            Toast.makeText(getApplicationContext(), baseResponse.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    //untuk berpindah activity dari parameter kiri ke parameter kanan
+                    Intent intent_signup = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(intent_signup);
+                    finish();
+
+                        }
+                    }else {
+                        hidepDialog();
+                        Toast.makeText(getApplicationContext(), "problem file", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<BaseResponse> call, Throwable t) {
+                    hidepDialog();
+                    Log.v("Response gotten is", t.getMessage());
+                    Toast.makeText(getApplicationContext(), "problem uploading file " + t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                }
+        });
+            //untuk berpindah activity dari parameter kiri ke parameter kanan
+            Intent signup = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(signup);
+            finishAffinity();
+
+
+    }
+}}

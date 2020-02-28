@@ -2,7 +2,7 @@ package com.example.eventinapp.api;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
-    public static final String BASE_URL = "https://5fddafe0.ngrok.io/";
+    public static final String BASE_URL = "https://9181fee7.ngrok.io/";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient(){
