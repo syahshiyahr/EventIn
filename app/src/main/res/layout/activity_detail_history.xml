@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DetailHistoryActivity">
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/ic_arrow_back_black_24dp"/>
+
+    <TextView
+        android:id="@+id/tvEvent"
+        android:layout_below="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Name Event"
+        android:textAppearance="@style/tracking" />
+
+    <TextView
+        android:id="@+id/tvEventDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/tvEvent"
+        android:fontFamily="@font/montserrat"
+        android:textSize="14sp"
+        android:text="Event Date"/>
+
+    <TextView
+        android:id="@+id/tvFundsCollected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tvEventDate"
+        android:fontFamily="@font/montserrat"
+        android:textSize="14sp"
+        android:text="Funds Collected"/>
+
+    <TextView
+        android:id="@+id/tvSponsors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/tvFundsCollected"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="16sp"
+        android:text="Sponsors"/>
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

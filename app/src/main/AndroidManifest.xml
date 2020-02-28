@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.eventinapp">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -9,7 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Notification"></activity>
+        <activity android:name=".activity.PopUpActivity" />
+        <activity android:name=".activity.DetailHistoryActivity" />
+        <activity android:name=".activity.EditProfileActivity" />
+        <activity android:name=".activity.ChooseEventMakeActivity" />
+        <activity android:name=".activity.MakeOfferUploadActivity" />
+        <activity android:name=".activity.AcceptUploadActivity" />
+        <activity android:name=".activity.ChooseEventAccActivity" />
+        <activity android:name=".activity.Notification" />
         <activity android:name=".activity.DescOfferActivity" />
         <activity android:name=".activity.CreateEventActivity" />
         <activity android:name=".activity.RegisterActivity" />

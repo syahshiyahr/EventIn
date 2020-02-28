@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AcceptUploadActivity">
+
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/ic_arrow_back_black_24dp"/>
+
+
+    <ImageView
+        android:id="@+id/img_desc_acc"
+        android:layout_width="93dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btn_back"
+        tools:src="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/name_company_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_desc_acc"
+        android:text="Company Name"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:id="@+id/text_date_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name_company_acc"
+        android:text="Event Date"
+        android:layout_marginTop="20dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginLeft="38dp"/>
+
+    <TextView
+        android:id="@+id/date_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_date_acc"
+        android:text="Event Date"
+        android:textSize="14sp"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="38dp"/>
+
+    <TextView
+        android:id="@+id/text_upload_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_acc"
+        android:text="Upload Proposal"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginLeft="38dp"/>
+
+    <TextView
+        android:id="@+id/btn_upload_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_upload_acc"
+        android:text="Upload File"
+        android:textSize="14sp"
+        android:textColor="#6689BF"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="38dp"/>
+
+    <TextView
+        android:id="@+id/notes_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_upload_acc"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Notes"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/edt_notes_acc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notes_acc"
+        android:textSize="14sp"
+        android:textColor="#615E5E"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"/>
+
+    <Button
+        android:id="@+id/btn_create"
+        android:layout_width="220.79dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="620dp"
+        android:background="@drawable/button_blue"
+        android:elevation="4dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp" />
+
+
+
+</RelativeLayout>

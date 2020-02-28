@@ -1,7 +1,6 @@
 package com.example.eventinapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,17 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.eventinapp.R;
-import com.example.eventinapp.adapter.CardViewCompanyAdapter;
-import com.example.eventinapp.data.CompanyData;
-import com.example.eventinapp.model.Company;
-import com.example.eventinapp.ui.home.HomeFragment;
-
-import java.util.ArrayList;
-
-import static android.nfc.NfcAdapter.EXTRA_DATA;
 
 public class DescOfferActivity extends AppCompatActivity implements View.OnClickListener {
     TextView textName, textDesc;
@@ -63,12 +52,15 @@ public class DescOfferActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_back:
-                Intent back = new Intent(DescOfferActivity.this, HomeFragment.class);
-                startActivity(back);
+                onBackPressed();
                 break;
             case R.id.btn_acc_offer:
+                Intent acc = new Intent(DescOfferActivity.this, ChooseEventAccActivity.class);
+                startActivity(acc);
                 break;
             case R.id.btn_make_offer:
+                Intent make = new Intent(DescOfferActivity.this, ChooseEventMakeActivity.class);
+                startActivity(make);
                 break;
         }
     }

@@ -8,16 +8,15 @@ import android.widget.ImageView;
 
 import com.example.eventinapp.R;
 
-public class Notification extends AppCompatActivity implements View.OnClickListener {
+public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification);
+        setContentView(R.layout.activity_edit_profile);
 
         ImageView btn_back = findViewById(R.id.btn_back);
         btn_back.setOnClickListener(this);
-
 
     }
 

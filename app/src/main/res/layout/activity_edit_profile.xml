@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EditProfileActivity">
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/ic_arrow_back_black_24dp"/>
+
+    <TextView
+        android:id="@+id/tvEdtProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="top"
+        android:text="Edit Profile"
+        android:textAppearance="@style/tracking" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@id/tvEdtProfile"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="31dp"
+        android:background="#C7C7C7" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/foto_profil"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        app:civ_border_color="#fff"
+        app:civ_border_width="2dp"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/profile_picture"/>
+
+    <TextView
+        android:id="@+id/tvFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="30dp"
+        android:textSize="16sp"
+        android:text="Full Name"
+        android:textColor="#202020"
+        android:fontFamily="@font/montserrat"
+        android:layout_below="@id/foto_profil"/>
+
+    <EditText
+        android:id="@+id/edtFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvFullName"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:text="Your Name"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#615E5E"
+        android:textSize="14sp"
+        android:layout_marginTop="6dp"/>
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="30dp"
+        android:textSize="16sp"
+        android:text="Email"
+        android:textColor="#202020"
+        android:fontFamily="@font/montserrat"
+        android:layout_below="@id/edtFullName"/>
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvEmail"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:text="Your Email"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#615E5E"
+        android:textSize="14sp"
+        android:layout_marginTop="6dp"/>
+
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="30dp"
+        android:textSize="16sp"
+        android:text="Phone Number"
+        android:textColor="#202020"
+        android:fontFamily="@font/montserrat"
+        android:layout_below="@id/edtEmail"/>
+
+    <EditText
+        android:id="@+id/edtPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPhoneNumber"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:text="Your Phone Number"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#615E5E"
+        android:textSize="14sp"
+        android:layout_marginTop="6dp"/>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_below="@+id/edtPhoneNumber"
+        android:layout_width="220.79dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="620dp"
+        android:background="@drawable/button_blue"
+        android:elevation="4dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp" />
+
+
+
+
+
+
+
+</RelativeLayout>

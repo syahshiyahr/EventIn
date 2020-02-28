@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    app:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="10dp"
+    >
+
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/img_item_photo"
+            android:layout_width="93dp"
+            android:layout_height="93dp"
+            tools:src="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat"
+            android:textSize="12sp"
+            android:layout_toEndOf="@id/img_item_photo"
+            tools:text="Company Name" />
+
+        <TextView
+            android:id="@+id/tvId"
+            android:layout_below="@id/tv_item_name"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat"
+            android:textSize="12sp"
+            android:layout_toEndOf="@id/img_item_photo"
+            tools:text="ID : 123456678990" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_below="@id/tvId"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat"
+            android:textSize="9sp"
+            android:layout_toEndOf="@id/img_item_photo"
+            tools:text="Proposal has been received by respondent. " />
+
+        <TextView
+            android:id="@+id/Date"
+            android:layout_below="@id/tvStatus"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat"
+            android:textSize="8sp"
+            android:layout_toEndOf="@id/img_item_photo"
+            tools:text="27 May 2020" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
