@@ -35,7 +35,6 @@ import java.util.regex.Pattern;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,6 +44,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private Button register;
     private TextView toSignin, upload, fileChoosen;
     private String nameUser, emailUser, passwordUser, phoneNumUser, identityUser;
+    private RequestBody name;
+    private RequestBody email;
+    private RequestBody password;
+    private RequestBody phoneNum;
     public MultipartBody.Part part;
     private MyApi myApi;
     public static final int FILE_PICKER_REQUEST_CODE = 1;
@@ -108,23 +111,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 }
 
 
-    protected void hidepDialog() {
-
-        if (pDialog.isShowing()) pDialog.dismiss();
-    }
-    protected void showpDialog() {
-
-        if (!pDialog.isShowing()) pDialog.show();
-    }
-    protected void initDialog() {
-
-        pDialog = new ProgressDialog(this);
-        pDialog.setMessage(getString(R.string.msg_loading));
-        pDialog.setCancelable(true);
-    }
-
-
-    private void launchPicker() {
+private void launchPicker() {
         new MaterialFilePicker()
                 .withActivity(this)
                 .withRequestCode(FILE_PICKER_REQUEST_CODE)
@@ -147,9 +134,20 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 pdfPath = path;
                 Toast.makeText(this, "Picked file: " + path, Toast.LENGTH_LONG).show();
             }
+            if (pdfPath == null) {
+                Toast.makeText(this, "please select a file ", Toast.LENGTH_LONG).show();
+                return;
+            } else {
+                // Parsing any Media type file
+                RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), new File(path));
+
+                part = MultipartBody.Part.createFormData("identity", file.getName(), requestBody);
+
+            }
         }
 
     }
+
 
     @SuppressLint("WrongViewCast")
     private void displayFromFile(File file) {
@@ -185,20 +183,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void registerUser() {
-        if (pdfPath == null) {
-            Toast.makeText(this, "please select a file ", Toast.LENGTH_LONG).show();
-            return;
-        } else {
-            showpDialog();
-
-            // Map is used to multipart the file using okhttp3.RequestBody
-            Map<String, RequestBody> map = new HashMap<>();
-            File file = new File(pdfPath);
-            // Parsing any Media type file
-            RequestBody requestBody = RequestBody.create(MediaType.parse("application/pdf"), file);
-
-            part = MultipartBody.Part.createFormData("file",file.getName(), requestBody);
-
 
         // ngambil text dari edit text
         nameUser = edtName.getText().toString();
@@ -206,36 +190,37 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         passwordUser = edtPassword.getText().toString();
         phoneNumUser = edtPhoneNum.getText().toString();
 
+        name = RequestBody.create(MediaType.parse("text/plain"), nameUser);
+        email = RequestBody.create(MediaType.parse("text/plain"), emailUser);
+        password = RequestBody.create(MediaType.parse("text/plain"), passwordUser);
+        phoneNum = RequestBody.create(MediaType.parse("text/plain"), phoneNumUser);
 
 
         myApi = ApiClient.getClient().create(MyApi.class);
 
-        Call<BaseResponse> registerCall = myApi.register(nameUser, emailUser, passwordUser, phoneNumUser, part);
+        Call<BaseResponse> registerCall = myApi.register(name, email, password, phoneNum, part);
 
         registerCall.enqueue(new Callback<BaseResponse>() {
             @Override
                public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
                    if (response.isSuccessful()){
                         if (response.body() != null){
-                            hidepDialog();
                             BaseResponse baseResponse = response.body();
                             Toast.makeText(getApplicationContext(), baseResponse.getMessage(), Toast.LENGTH_SHORT).show();
 
-                    //untuk berpindah activity dari parameter kiri ke parameter kanan
-                    Intent intent_signup = new Intent(RegisterActivity.this, LoginActivity.class);
-                    startActivity(intent_signup);
-                    finish();
-
+                            //untuk berpindah activity dari parameter kiri ke parameter kanan
+                            Intent intent_signup = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent_signup);
+                            finish();
                         }
-                    }else {
-                        hidepDialog();
-                        Toast.makeText(getApplicationContext(), "problem file", Toast.LENGTH_SHORT).show();
-                    }
+                   }
+                   else {
+                        Toast.makeText(getApplicationContext(), "problem file : " + response.message(), Toast.LENGTH_SHORT).show();
+                   }
                 }
 
                 @Override
                 public void onFailure(Call<BaseResponse> call, Throwable t) {
-                    hidepDialog();
                     Log.v("Response gotten is", t.getMessage());
                     Toast.makeText(getApplicationContext(), "problem uploading file " + t.getMessage(), Toast.LENGTH_SHORT).show();
 
@@ -247,5 +232,5 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             finishAffinity();
 
 
-    }
+
 }}

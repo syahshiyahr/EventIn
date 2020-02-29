@@ -13,11 +13,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.eventinapp.R;
+import com.example.eventinapp.activity.CreateEventActivity;
 import com.example.eventinapp.activity.EditProfileActivity;
+import com.example.eventinapp.activity.SubscriptionActivity;
 import com.example.eventinapp.adapter.CardViewCompanyAdapter;
 import com.example.eventinapp.adapter.CardViewYourEventAdapter;
 import com.example.eventinapp.data.CompanyData;
@@ -28,7 +31,8 @@ import com.example.eventinapp.model.Event;
 import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
-    TextView edtProfil, tvName;
+    TextView edtProfil, tvName, tvSubs;
+    Button addEvent;
     private RecyclerView rvEvent;
     private ArrayList<Event> list = new ArrayList<>();
 
@@ -49,6 +53,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         edtProfil = view.findViewById(R.id.edt_profil);
         edtProfil.setOnClickListener(this);
+
+        tvSubs = view.findViewById(R.id.text_subscription);
+        tvSubs.setOnClickListener(this);
+
+        addEvent = view.findViewById(R.id.btn_add_event);
+        addEvent.setOnClickListener(this);
 
         tvName = view.findViewById(R.id.tv_item_name);
         rvEvent = view.findViewById(R.id.rv_event_profile);
@@ -73,6 +83,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()){
             case R.id.edt_profil:
                 startActivity(new Intent(getContext(), EditProfileActivity.class));
+                break;
+            case R.id.text_subscription:
+                startActivity(new Intent(getContext(), SubscriptionActivity.class));
+                break;
+            case R.id.btn_add_event:
+                startActivity(new Intent(getContext(), CreateEventActivity.class));
                 break;
         }
     }

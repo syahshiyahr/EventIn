@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SubscriptionActivity">
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/ic_arrow_back_black_24dp"/>
+
+
+
+    <TextView
+        android:id="@+id/tvSubscription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="top"
+        android:text="Subscription"
+        android:textAppearance="@style/tracking" />
+
+
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@id/tvSubscription"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="31dp"
+        android:background="#C7C7C7" />
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/cv1"
+        android:layout_below="@id/line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginLeft="38dp"
+        app:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="10dp"
+        >
+
+        <RelativeLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name_event"
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat"
+                android:textSize="14sp"
+                android:gravity="center"
+                tools:text="Premium" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_below="@id/cv1"
+        android:id="@+id/cv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginLeft="38dp"
+        app:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="10dp"
+        >
+
+        <RelativeLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_subs2"
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat"
+                android:textSize="14sp"
+                android:gravity="center"
+                tools:text="Premium" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_below="@id/cv2"
+        android:id="@+id/cv3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginLeft="38dp"
+        app:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="10dp"
+        >
+
+        <RelativeLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_subs3"
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat"
+                android:textSize="14sp"
+                android:gravity="center"
+                tools:text="Premium" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

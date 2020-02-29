@@ -27,11 +27,11 @@ public interface MyApi {
     @Multipart
     @POST("User/register")
     Call<BaseResponse> register(
-            @Part("name") String name,
-            @Part("email") String email,
-            @Part("password") String password,
-            @Part("phoneNum") String phoneNum,
-            @Part MultipartBody.Part file
+            @Part("name") RequestBody name,
+            @Part("email") RequestBody email,
+            @Part("password") RequestBody password,
+            @Part("phoneNum") RequestBody phoneNum,
+            @Part MultipartBody.Part identity
     );
 
     //Login

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.eventinapp">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.PopUpActivity" />
+        <activity android:name=".activity.SubscriptionActivity"></activity>
+        <activity
+            android:name=".activity.PopUpActivity"
+            android:theme="@style/AppTheme.CustomTheme" />
         <activity android:name=".activity.DetailHistoryActivity" />
         <activity android:name=".activity.EditProfileActivity" />
         <activity android:name=".activity.ChooseEventMakeActivity" />
@@ -33,7 +38,9 @@
             android:label="@string/title_activity_bottom_nav" />
         <activity
             android:name=".activity.MainActivity"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan">
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

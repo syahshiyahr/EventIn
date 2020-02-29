@@ -83,4 +83,14 @@
         <item name="android:textColor">#3C3C3C</item>
     </style>
 
+    <style name="AppTheme.CustomTheme">
+        <item name="android:windowIsTranslucent">true</item>
+
+    </style>
+
+    <style name="Hide">
+    <item name="android:windowCloseOnTouchOutside">true</item>>
+
+    </style>
+
 </resources>
