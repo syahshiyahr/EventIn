@@ -41,6 +41,19 @@ public interface MyApi {
                     Login login
     );
 
+    //Register event
+    @Multipart
+    @POST("event/create")
+    Call<BaseResponse> regevent(
+            @Header("Authorization")
+                    String authorization,
+            @Part("eventName") RequestBody eventName,
+            @Part("eventDate") RequestBody eventDate,
+            @Part MultipartBody.Part validationFile
+    );
+
+
+
 
 
 }

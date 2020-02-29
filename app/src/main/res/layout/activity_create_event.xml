@@ -98,19 +98,34 @@
         android:textSize="10sp" />
 
     <TextView
-        android:id="@+id/upload_file_create"
+    android:id="@+id/upload_file_create"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="58dp"
+    android:layout_marginTop="507dp"
+    android:layout_marginRight="58dp"
+    android:fontFamily="@font/montserrat"
+    android:gravity="top"
+    android:text="Upload File"
+    android:textColor="#6689BF"
+    android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/name_file_create"
+        android:layout_below="@id/upload_file_create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginLeft="58dp"
-        android:layout_marginTop="507dp"
         android:layout_marginRight="58dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/montserrat"
         android:gravity="top"
-        android:text="Upload File"
-        android:textColor="#6689BF"
-        android:textSize="12sp" />
+        android:text="No File Choosen"
+        android:textColor="#3C3C3C"
+        android:textSize="10sp" />
 
     <Button
         android:id="@+id/btn_create"

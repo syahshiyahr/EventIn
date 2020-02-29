@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.eventinapp.R;
 import com.example.eventinapp.adapter.CardViewEventAccAdapter;
+import com.example.eventinapp.adapter.CardViewEventMakeAdapter;
 import com.example.eventinapp.data.EventData;
 import com.example.eventinapp.model.Event;
 
@@ -32,7 +33,7 @@ public class ChooseEventMakeActivity extends AppCompatActivity implements View.O
 
         list.addAll(EventData.getListData());
         rvEvent.setLayoutManager(new LinearLayoutManager(this));
-        CardViewEventAccAdapter cvEventAdapter = new CardViewEventAccAdapter(list);
+        CardViewEventMakeAdapter cvEventAdapter = new CardViewEventMakeAdapter(list);
         rvEvent.setAdapter(cvEventAdapter);
 
         ImageView btn_back = findViewById(R.id.btn_back);

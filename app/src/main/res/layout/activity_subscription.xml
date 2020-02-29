@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_subs"
     tools:context=".activity.SubscriptionActivity">
     <ImageView
         android:id="@+id/btn_back"
@@ -84,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="38dp"
         android:layout_marginLeft="38dp"
         app:cardUseCompatPadding="true"
@@ -107,7 +108,7 @@
                 android:fontFamily="@font/montserrat"
                 android:textSize="14sp"
                 android:gravity="center"
-                tools:text="Premium" />
+                tools:text="Gold" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -120,7 +121,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="38dp"
         android:layout_marginLeft="38dp"
         app:cardUseCompatPadding="true"
@@ -143,7 +144,7 @@
                 android:fontFamily="@font/montserrat"
                 android:textSize="14sp"
                 android:gravity="center"
-                tools:text="Premium" />
+                tools:text="Silver" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
